@@ -32,21 +32,21 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Token Generation Simulator</h1>
-        <p class="lead mb-4">This simulator demonstrates token generation speeds for different Apple Silicon chips and quantization methods. Select a chip, quantization, and mode to see benchmark results and simulate token generation.</p>
+        <p class="lead mb-4">This simulator demonstrates token generation speeds for different devices and models. Select a device and model to see benchmark results and simulate token generation.</p>
         
         <div class="row">
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label for="chip-select" class="form-label">Apple Silicon Chip:</label>
-                    <select class="form-select" id="chip-select"></select>
+                    <label for="chip-select" class="form-label">Device:</label>
+                    <select class="form-select" id="chip-select">
+                        <option value="">Select device</option>
+                    </select>
                 </div>
-                <div class="mb-3 quantization-mode-group" style="display: none;">
-                    <label for="quantization-select" class="form-label">Quantization:</label>
-                    <select class="form-select" id="quantization-select"></select>
-                </div>
-                <div class="mb-3 quantization-mode-group" style="display: none;">
-                    <label for="mode-select" class="form-label">Mode:</label>
-                    <select class="form-select" id="mode-select"></select>
+                <div class="mb-3">
+                    <label for="quantization-select" class="form-label">Model:</label>
+                    <select class="form-select" id="quantization-select">
+                        <option value="">Select model</option>
+                    </select>
                 </div>
                 <!-- Add this new div for the no-data message -->
                 <div id="no-data-message" class="alert alert-warning py-2 small" style="display: none;"></div>
@@ -61,7 +61,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="token-count-input" class="form-label">Total tokens to generate:</label>
-                    <input type="number" id="token-count-input" class="form-control" value="100" min="1" max="32768">
+                    <input type="range" id="token-count-slider" class="form-range" min="1" max="100" value="50">
+                    <div class="input-group mt-2">
+                        <input type="number" id="token-count-input" class="form-control" value="100" min="1" max="32768">
+                        <span class="input-group-text">tokens</span>
+                    </div>
                     <small class="text-muted">Maximum: 32,768 tokens</small>
                 </div>
                 <button id="start-btn" class="btn btn-primary me-2">Start</button>
@@ -84,15 +88,15 @@
                     <h3 class="mb-3">Benchmark Results</h3>
                     <table class="table table-striped">
                         <tbody>
-                            <tr><td>Chip</td><td id="result-chip"></td></tr>
+                            <tr><td>Device</td><td id="result-chip"></td></tr>
                             <tr><td>Memory Bandwidth</td><td id="result-bw"></td></tr>
                             <tr><td>GPU Cores</td><td id="result-gpu"></td></tr>
-                            <tr><td>Quantization</td><td id="result-quantization"></td></tr>
+                            <tr><td>Model</td><td id="result-model"></td></tr>
                             <tr><td>Tokens per Second</td><td id="result-tps"></td></tr>
                         </tbody>
                     </table>
                     <p class="text-muted small">
-                        Source: <a href="https://github.com/ggerganov/llama.cpp/discussions/4167" target="_blank">Performance of llama.cpp on Apple Silicon M-series</a> by ggerganov
+                        Source: <a href="https://github.com/ggerganov/llama.cpp/discussions/4167" target="_blank">Performance of llama.cpp on various devices</a> by ggerganov
                     </p>
                 </div>
                 
@@ -128,13 +132,13 @@
         <div class="container">
             <p class="mb-0">Created by <a href="https://github.com/kamilstanuch" target="_blank">Kamil Stanuch</a></p>
             <p class="mb-0 text-muted">
-                Benchmark data sourced from <a href="https://github.com/ggerganov/llama.cpp/discussions/4167" target="_blank">ggerganov's performance analysis of llama.cpp on Apple Silicon M-series</a>
+                Benchmark data sourced from <a href="https://github.com/ggerganov/llama.cpp/discussions/4167" target="_blank">ggerganov's performance analysis of llama.cpp on various devices</a>
             </p>
         </div>
     </footer>
 
     <script src="text.js"></script>
-    <script src="benchmarks.js"></script>
+    <script src="benchmarks_all.js"></script>
     <script src="script.js"></script>
 
     <!-- Add Bootstrap Icons and Bootstrap JS -->
