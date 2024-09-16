@@ -21,8 +21,8 @@ let generatedTokens = 0;
 let animationFrameId;
 let intervalId;
 
-// Import the sample text content
-const sampleTextContent = window.sampleTextContent;
+// Add this fallback text in case the sample text is not loaded
+const fallbackText = "This is a fallback sample text for token generation. It will be used if the actual sample text fails to load. The purpose of this text is to provide a backup solution for the token generation simulation.";
 
 // Function to get all available devices
 function getAllDevices() {
@@ -190,7 +190,9 @@ function resetSimulation() {
 function generateTokens() {
     const tokensPerSecond = parseInt(speedNumber.value);
     const totalTokens = parseInt(tokenCountInput.value);
-    const words = sampleTextContent.split(' ');
+    
+    // Use the fallback text if sampleTextContent is not available
+    const words = (window.sampleTextContent || fallbackText).split(' ');
     let wordIndex = 0;
 
     const startTime = performance.now();
@@ -291,6 +293,11 @@ document.addEventListener('DOMContentLoaded', () => {
         resetDeviceAndModel();
         updateExpectedTime();
     });
+
+    // Set default speed
+    speedNumber.value = 1; // or whatever default you want
+    const sliderValue = Math.round((Math.log(speedNumber.value) - Math.log(1)) / (Math.log(32768) - Math.log(1)) * 100);
+    speedInput.value = sliderValue;
 
     // Initial update
     updateBenchmarkResults();

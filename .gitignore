@@ -1,2 +1,6 @@
 git-push.sh
-seo.txt
+seo/
+.cursorrules
+.DS_Store
+reorganize.sh
+.venv

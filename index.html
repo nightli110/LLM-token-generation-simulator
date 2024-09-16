@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Token Generation Simulator</title>
-    <meta name="description" content="Simulate token generation speed with customizable settings">
+    <title>LLM Token Generation Speed Simulator & Benchmark | Compare Local LLM Performance</title>
+    <meta name="description" content="Compare LLM token generation speeds across devices and models. Benchmark your hardware for local LLM inference and find the best setup for your needs.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://yourdomain.com/llm-token-generation-simulator/">
+    <meta name="keywords" content="LLM token generation speed, local LLM benchmark, LLM inference speed comparison, best device for local LLM, LLM hardware requirements, GPU vs. CPU for LLM, Apple Silicon LLM performance">
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -27,14 +29,41 @@
             background-color: #f8f9fa;
             text-align: center;
         }
+        /* Add these new styles */
+        .table th, .table td {
+            max-width: 150px; /* Adjust this value as needed */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .table th {
+            font-size: 0.9rem; /* Optionally reduce font size for headers */
+        }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LLM Token Generation Speed Simulator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Compare LLM token generation speeds across devices and models. Benchmark your hardware for local LLM inference."
+    }
+    </script>
+    <script src="js/include-html.js"></script>
 </head>
 <body>
+    <div id="navbar-placeholder"></div>
+
     <div class="container mt-5">
-        <h1 class="mb-4">Token Generation Simulator</h1>
-        <p class="lead mb-4">This simulator demonstrates token generation speeds for different devices and models. Select a device and model to see benchmark results and simulate token generation.</p>
+        <h1 class="mb-4">LLM Token Generation Speed Simulator & Benchmark</h1>
+        <p class="lead mb-4">Compare token generation speeds for different devices and models. Find the best hardware setup for your local LLM inference needs.</p>
         
-        <div class="row">
+        <div id="simulator" class="row">
             <div class="col-md-4">
                 <div class="mb-3">
                     <label for="chip-select" class="form-label">Device:</label>
@@ -87,6 +116,12 @@
                 <div id="benchmark-results" class="mb-4" style="display: none;">
                     <h3 class="mb-3">Benchmark Results</h3>
                     <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Benchmark</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr><td>Device</td><td id="result-chip"></td></tr>
                             <tr><td>Memory Bandwidth</td><td id="result-bw"></td></tr>
@@ -107,10 +142,2089 @@
             </div>
         </div>
         
-        <!-- Add this new section below the existing row -->
-        <div class="row mt-5">
+        <div id="about" class="row mt-5">
             <div class="col-12">
-                <h4>About This Simulation</h4>
+                <h2>About This LLM Performance Simulator</h2>
+                <p>This interactive tool simulates token generation speeds for various language models (LLMs) and hardware configurations. Here's what you can learn:</p>
+                <ul>
+                    <li><strong>Token Generation Speed:</strong> Understand how different devices and models affect LLM inference speed.</li>
+                    <li><strong>Hardware Comparison:</strong> Compare GPUs, CPUs, and Apple Silicon chips for LLM performance.</li>
+                    <li><strong>Model Optimization:</strong> See the impact of quantization on token generation speed.</li>
+                    <li><strong>Real-world Expectations:</strong> Get insights into expected performance for your specific hardware and model combination.</li>
+                </ul>
+                <p>Use this simulator to make informed decisions about hardware requirements for running LLMs locally on your machine.</p>
+            </div>
+        </div>
+        <div id="how-to-use" class="row mt-5">
+            <div class="col-12">
+                <h2>How to Use This LLM Benchmark Tool</h2>
+                <ol>
+                    <li>Select your device from the dropdown menu.</li>
+                    <li>Choose an LLM model and quantization level.</li>
+                    <li>Adjust the token generation speed if desired.</li>
+                    <li>Set the total number of tokens to generate.</li>
+                    <li>Click "Start" to run the simulation.</li>
+                    <li>Analyze the results to understand potential performance on your hardware.</li>
+                </ol>
+                <p>Compare different configurations to find the optimal setup for your local LLM deployment.</p>
+            </div>
+        </div>
+    </div>
+        <div class="container"> <!-- Table of benchmarks -->
+            <h2>AI Model Benchmarks</h2>
+            <h3>Apple Processing Benchmarks</h3>
+            <div class='table-responsive'>
+                <table class='table table-striped table-bordered table-hover'>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            
+                            <th>Llama2_7B_F16</th>
+                            
+                            <th>Llama2_7B_Q4_0</th>
+                            
+                            <th>Llama2_7B_Q8_0</th>
+                            
+                            <th>Llama3_70B_F16</th>
+                            
+                            <th>Llama3_70B_Q4_K_M</th>
+                            
+                            <th>Llama3_8B_F16</th>
+                            
+                            <th>Llama3_8B_Q4_K_M</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>M1_GPUCores_7_BW_68GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                107.81
+                            </td>
+                            
+                            <td>
+                                108.21
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                87.26
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_GPUCores_8_BW_68GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                117.96
+                            </td>
+                            
+                            <td>
+                                117.25
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Pro_GPUCores_14_BW_200GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                232.55
+                            </td>
+                            
+                            <td>
+                                235.16
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Pro_GPUCores_16_BW_200GBs</td>
+                            
+                            <td>
+                                302.14
+                            </td>
+                            
+                            <td>
+                                266.25
+                            </td>
+                            
+                            <td>
+                                270.37
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Max_GPUCores_24_BW_400GBs</td>
+                            
+                            <td>
+                                453.03
+                            </td>
+                            
+                            <td>
+                                400.26
+                            </td>
+                            
+                            <td>
+                                405.87
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Max_GPUCores_32_BW_400GBs</td>
+                            
+                            <td>
+                                599.53
+                            </td>
+                            
+                            <td>
+                                530.06
+                            </td>
+                            
+                            <td>
+                                537.37
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                33.01
+                            </td>
+                            
+                            <td>
+                                418.77
+                            </td>
+                            
+                            <td>
+                                355.45
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Ultra_GPUCores_48_BW_800GBs</td>
+                            
+                            <td>
+                                875.81
+                            </td>
+                            
+                            <td>
+                                772.24
+                            </td>
+                            
+                            <td>
+                                783.45
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_GPUCores_10_BW_100GBs</td>
+                            
+                            <td>
+                                201.34
+                            </td>
+                            
+                            <td>
+                                179.57
+                            </td>
+                            
+                            <td>
+                                181.4
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Pro_GPUCores_16_BW_200GBs</td>
+                            
+                            <td>
+                                312.65
+                            </td>
+                            
+                            <td>
+                                294.24
+                            </td>
+                            
+                            <td>
+                                288.46
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Pro_GPUCores_19_BW_200GBs</td>
+                            
+                            <td>
+                                384.38
+                            </td>
+                            
+                            <td>
+                                341.19
+                            </td>
+                            
+                            <td>
+                                344.5
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Max_GPUCores_30_BW_400GBs</td>
+                            
+                            <td>
+                                600.46
+                            </td>
+                            
+                            <td>
+                                537.6
+                            </td>
+                            
+                            <td>
+                                540.15
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Max_GPUCores_38_BW_400GBs</td>
+                            
+                            <td>
+                                755.67
+                            </td>
+                            
+                            <td>
+                                671.31
+                            </td>
+                            
+                            <td>
+                                677.91
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Ultra_GPUCores_60_BW_800GBs</td>
+                            
+                            <td>
+                                1128.59
+                            </td>
+                            
+                            <td>
+                                1013.81
+                            </td>
+                            
+                            <td>
+                                1003.16
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Ultra_GPUCores_76_BW_800GBs</td>
+                            
+                            <td>
+                                1401.85
+                            </td>
+                            
+                            <td>
+                                1238.48
+                            </td>
+                            
+                            <td>
+                                1248.59
+                            </td>
+                            
+                            <td>
+                                145.82
+                            </td>
+                            
+                            <td>
+                                117.76
+                            </td>
+                            
+                            <td>
+                                1202.74
+                            </td>
+                            
+                            <td>
+                                1023.89
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_GPUCores_10_BW_100GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                186.75
+                            </td>
+                            
+                            <td>
+                                187.52
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Pro_GPUCores_14_BW_150GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                269.49
+                            </td>
+                            
+                            <td>
+                                272.11
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Pro_GPUCores_18_BW_150GBs</td>
+                            
+                            <td>
+                                357.45
+                            </td>
+                            
+                            <td>
+                                341.67
+                            </td>
+                            
+                            <td>
+                                344.66
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Max_GPUCores_40_BW_400GBs</td>
+                            
+                            <td>
+                                779.17
+                            </td>
+                            
+                            <td>
+                                759.7
+                            </td>
+                            
+                            <td>
+                                757.64
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                62.88
+                            </td>
+                            
+                            <td>
+                                751.49
+                            </td>
+                            
+                            <td>
+                                678.04
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Apple Generation Benchmarks</h3>
+            <div class='table-responsive'>
+                <table class='table table-striped table-bordered table-hover'>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            
+                            <th>Llama2_7B_F16</th>
+                            
+                            <th>Llama2_7B_Q4_0</th>
+                            
+                            <th>Llama2_7B_Q8_0</th>
+                            
+                            <th>Llama3_70B_F16</th>
+                            
+                            <th>Llama3_70B_Q4_K_M</th>
+                            
+                            <th>Llama3_8B_F16</th>
+                            
+                            <th>Llama3_8B_Q4_K_M</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>M1_GPUCores_7_BW_68GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                14.19
+                            </td>
+                            
+                            <td>
+                                7.92
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                9.72
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_GPUCores_8_BW_68GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                14.15
+                            </td>
+                            
+                            <td>
+                                7.91
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Pro_GPUCores_14_BW_200GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                35.52
+                            </td>
+                            
+                            <td>
+                                21.95
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Pro_GPUCores_16_BW_200GBs</td>
+                            
+                            <td>
+                                12.75
+                            </td>
+                            
+                            <td>
+                                36.41
+                            </td>
+                            
+                            <td>
+                                22.34
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Max_GPUCores_24_BW_400GBs</td>
+                            
+                            <td>
+                                22.55
+                            </td>
+                            
+                            <td>
+                                54.61
+                            </td>
+                            
+                            <td>
+                                37.81
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Max_GPUCores_32_BW_400GBs</td>
+                            
+                            <td>
+                                23.03
+                            </td>
+                            
+                            <td>
+                                61.19
+                            </td>
+                            
+                            <td>
+                                40.2
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                4.09
+                            </td>
+                            
+                            <td>
+                                18.43
+                            </td>
+                            
+                            <td>
+                                34.49
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M1_Ultra_GPUCores_48_BW_800GBs</td>
+                            
+                            <td>
+                                33.92
+                            </td>
+                            
+                            <td>
+                                74.93
+                            </td>
+                            
+                            <td>
+                                55.69
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_GPUCores_10_BW_100GBs</td>
+                            
+                            <td>
+                                6.72
+                            </td>
+                            
+                            <td>
+                                21.91
+                            </td>
+                            
+                            <td>
+                                12.21
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Pro_GPUCores_16_BW_200GBs</td>
+                            
+                            <td>
+                                12.47
+                            </td>
+                            
+                            <td>
+                                37.87
+                            </td>
+                            
+                            <td>
+                                22.7
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Pro_GPUCores_19_BW_200GBs</td>
+                            
+                            <td>
+                                13.06
+                            </td>
+                            
+                            <td>
+                                38.86
+                            </td>
+                            
+                            <td>
+                                23.01
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Max_GPUCores_30_BW_400GBs</td>
+                            
+                            <td>
+                                24.16
+                            </td>
+                            
+                            <td>
+                                60.99
+                            </td>
+                            
+                            <td>
+                                39.97
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Max_GPUCores_38_BW_400GBs</td>
+                            
+                            <td>
+                                24.65
+                            </td>
+                            
+                            <td>
+                                65.95
+                            </td>
+                            
+                            <td>
+                                41.83
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Ultra_GPUCores_60_BW_800GBs</td>
+                            
+                            <td>
+                                39.86
+                            </td>
+                            
+                            <td>
+                                88.64
+                            </td>
+                            
+                            <td>
+                                62.14
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M2_Ultra_GPUCores_76_BW_800GBs</td>
+                            
+                            <td>
+                                41.02
+                            </td>
+                            
+                            <td>
+                                94.27
+                            </td>
+                            
+                            <td>
+                                66.64
+                            </td>
+                            
+                            <td>
+                                4.71
+                            </td>
+                            
+                            <td>
+                                12.13
+                            </td>
+                            
+                            <td>
+                                36.25
+                            </td>
+                            
+                            <td>
+                                76.28
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_GPUCores_10_BW_100GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                21.34
+                            </td>
+                            
+                            <td>
+                                12.27
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Pro_GPUCores_14_BW_150GBs</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                30.65
+                            </td>
+                            
+                            <td>
+                                17.44
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Pro_GPUCores_18_BW_150GBs</td>
+                            
+                            <td>
+                                9.89
+                            </td>
+                            
+                            <td>
+                                30.74
+                            </td>
+                            
+                            <td>
+                                17.53
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>M3_Max_GPUCores_40_BW_400GBs</td>
+                            
+                            <td>
+                                25.09
+                            </td>
+                            
+                            <td>
+                                66.31
+                            </td>
+                            
+                            <td>
+                                42.75
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                7.53
+                            </td>
+                            
+                            <td>
+                                22.39
+                            </td>
+                            
+                            <td>
+                                50.74
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>NVIDIA Processing Benchmarks</h3>
+            <div class='table-responsive'>
+                <table class='table table-striped table-bordered table-hover'>
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            
+                            <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_70B_F16</th>
+                            
+                            <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_70B_Q4_K_M</th>
+                            
+                            <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_8B_F16</th>
+                            
+                            <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_8B_Q4_K_M</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>3070_8GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                2283.62
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>3080_10GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                3557.02
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>3080_Ti_12GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                3556.67
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>4070_Ti_12GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                3653.07
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>4080_16GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                6758.9
+                            </td>
+                            
+                            <td>
+                                5064.99
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>RTX_4000_Ada_20GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                2951.87
+                            </td>
+                            
+                            <td>
+                                2310.53
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>3090_24GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                4239.64
+                            </td>
+                            
+                            <td>
+                                3865.39
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>4090_24GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                9056.26
+                            </td>
+                            
+                            <td>
+                                6898.71
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>RTX_5000_Ada_32GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                5835.41
+                            </td>
+                            
+                            <td>
+                                4467.46
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>3090_24GB_x2</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                393.89
+                            </td>
+                            
+                            <td>
+                                4690.5
+                            </td>
+                            
+                            <td>
+                                4004.14
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>4090_24GB_x2</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                905.38
+                            </td>
+                            
+                            <td>
+                                11094.51
+                            </td>
+                            
+                            <td>
+                                8545.0
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>RTX_A6000_48GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                466.82
+                            </td>
+                            
+                            <td>
+                                4315.18
+                            </td>
+                            
+                            <td>
+                                3621.81
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>RTX_6000_Ada_48GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                547.03
+                            </td>
+                            
+                            <td>
+                                6205.44
+                            </td>
+                            
+                            <td>
+                                5560.94
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>A40_48GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                239.92
+                            </td>
+                            
+                            <td>
+                                4043.05
+                            </td>
+                            
+                            <td>
+                                3240.95
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>L40S_48GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                649.08
+                            </td>
+                            
+                            <td>
+                                2491.65
+                            </td>
+                            
+                            <td>
+                                5908.52
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>RTX_4000_Ada_20GB_x4</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                306.44
+                            </td>
+                            
+                            <td>
+                                4366.64
+                            </td>
+                            
+                            <td>
+                                3369.24
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>A100_PCIe_80GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                726.65
+                            </td>
+                            
+                            <td>
+                                7504.24
+                            </td>
+                            
+                            <td>
+                                5800.48
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td>A100_SXM_80GB</td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                            <td>
+                                -
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>NVIDIA Generation Benchmarks</h3>
+            <div class='table-responsive'>
+    <table class='table table-striped table-bordered table-hover'>
+        <thead>
+            <tr>
+                <th>Device</th>
+                
+                <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_70B_F16</th>
+                
+                <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_70B_Q4_K_M</th>
+                
+                <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_8B_F16</th>
+                
+                <th style="max-width: 150px; word-wrap: break-word; overflow-wrap: break-word; font-size: 0.9rem;">Llama3_8B_Q4_K_M</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>3070_8GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    70.94
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>3080_10GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    106.4
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>3080_Ti_12GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    106.71
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>4070_Ti_12GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    82.21
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>4080_16GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    40.29
+                </td>
+                
+                <td>
+                    106.22
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>RTX_4000_Ada_20GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    20.85
+                </td>
+                
+                <td>
+                    58.59
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>3090_24GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    46.51
+                </td>
+                
+                <td>
+                    111.74
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>4090_24GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    54.34
+                </td>
+                
+                <td>
+                    127.74
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>RTX_5000_Ada_32GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    32.67
+                </td>
+                
+                <td>
+                    89.87
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>3090_24GB_x2</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    16.29
+                </td>
+                
+                <td>
+                    47.15
+                </td>
+                
+                <td>
+                    108.07
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>4090_24GB_x2</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    19.06
+                </td>
+                
+                <td>
+                    53.27
+                </td>
+                
+                <td>
+                    122.56
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>RTX_A6000_48GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    14.58
+                </td>
+                
+                <td>
+                    40.25
+                </td>
+                
+                <td>
+                    102.22
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>RTX_6000_Ada_48GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    18.36
+                </td>
+                
+                <td>
+                    51.97
+                </td>
+                
+                <td>
+                    130.99
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>A40_48GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    12.08
+                </td>
+                
+                <td>
+                    33.95
+                </td>
+                
+                <td>
+                    88.95
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>L40S_48GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    15.31
+                </td>
+                
+                <td>
+                    43.42
+                </td>
+                
+                <td>
+                    113.6
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>RTX_4000_Ada_20GB_x4</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    7.33
+                </td>
+                
+                <td>
+                    20.58
+                </td>
+                
+                <td>
+                    56.14
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>A100_PCIe_80GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    22.11
+                </td>
+                
+                <td>
+                    54.56
+                </td>
+                
+                <td>
+                    138.31
+                </td>
+                
+            </tr>
+            
+            <tr>
+                <td>A100_SXM_80GB</td>
+                
+                <td>
+                    -
+                </td>
+                
+                <td>
+                    24.33
+                </td>
+                
+                <td>
+                    53.18
+                </td>
+                
+                <td>
+                    133.38
+                </td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+        </div>
+        
+        <div class="container"> <!-- Understanding the Simulation -->
+            <div class="row mt-5">
+            <div class="col-12">
+                <h2>Understanding the Simulation</h2>
                 <p>This is a simulation of token generation, designed to demonstrate the concept of tokens per second in language models. Here's what's happening:</p>
                 <ul>
                     <li><strong>Token Generation:</strong> We're simulating the generation of tokens, where each token is approximately 4 characters of text.</li>
@@ -125,29 +2239,28 @@
                     </li>
                     <li><strong>Not a Real Language Model:</strong> This simulation uses pre-defined text and doesn't perform actual language model computations. Real language models would have different performance characteristics.</li>
                 </ul>
-                <p>This simulator is meant for educational purposes to help visualize token generation speeds. It's not indicative of real-world language model performance, which involves complex computations and can vary greatly based on model size and hardware.</p>
+                <p class="alert alert-info">
+                    <i class="bi bi-info-circle"></i>
+                    This simulator is meant for educational purposes to help visualize token generation speeds. It's not indicative of real-world language model performance, which involves complex computations and can vary greatly based on model size and hardware.
+                </p>
+            </div>
             </div>
         </div>
-    </div>
+    <div id="footer-placeholder"></div>
 
-    <footer class="footer">
-        <div class="container">
-            <p class="mb-0">Created by <a href="https://github.com/kamilstanuch" target="_blank">Kamil Stanuch</a></p>
-            <p class="mb-0 text-muted">
-                Benchmark data sourced from:
-                <a href="https://github.com/ggerganov/llama.cpp/discussions/4167" target="_blank">ggerganov's performance analysis of llama.cpp on various devices</a>
-                and
-                <a href="https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference" target="_blank">XiongjieDai's GPU Benchmarks on LLM Inference</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="text.js"></script>
-    <script src="benchmarks_all.js"></script>
-    <script src="script.js"></script>
+    <script src="js/data/sample-js/data/sample-text.js"></script>
+    <script src="js/data/benchmarks.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Add Bootstrap Icons and Bootstrap JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            includeHTML("navbar-placeholder", "./components/navbar.html");
+            includeHTML("footer-placeholder", "./components/footer.html");
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <!-- Other meta tags and styles -->
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container mt-5">
+        <article>
+            <h1>{{TITLE}}</h1>
+            {{CONTENT}}
+        </article>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/include-html.js"></script>
+    <script>
+        includeHTML("navbar-placeholder", "/components/navbar.html");
+        includeHTML("footer-placeholder", "/components/footer.html");
+    </script>
+</body>
+</html>
